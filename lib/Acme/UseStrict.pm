@@ -3,7 +3,7 @@ package Acme::UseStrict;
 use 5.010;
 use strict;
 use overload qw();
-use match::smart qw(M)
+use match::smart qw(M);
 
 BEGIN {
 	$Acme::UseStrict::AUTHORITY = 'cpan:TOBYINK';
