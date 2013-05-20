@@ -15,3 +15,13 @@ dist:v_0-995
 	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Acme-UseStrict-0.995.tar.gz> ;
 	rdfs:label      "Initial release" .
 
+dist:project :release dist:v_1-234 .
+dist:v_1-234
+	a               :Version ;
+	dc:issued       "2013-05-20"^^xsd:date ;
+	:revision       "1.234"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Acme-UseStrict-1.234.tar.gz> ;
+	dcs:changeset [
+		dcs:item [ rdfs:label "smartmatch -> match::smart" ];
+	].
+

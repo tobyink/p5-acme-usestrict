@@ -6,8 +6,8 @@
 	:perl_version_from _:main ;
 	:version_from _:main ;
 	:readme_from _:main ;
-	:test_requires "Test::More 0.61" , "Test::Exception" ;
-	:requires "Object::AUTHORITY", "strict", "overload" .
+	:test_requires "Test::More 0.96" , "Test::Exception" ;
+	:requires "match::smart" .
 
 _:main <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "lib/Acme/UseStrict.pm" .
 

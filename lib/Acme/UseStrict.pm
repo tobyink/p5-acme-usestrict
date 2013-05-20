@@ -2,26 +2,28 @@ package Acme::UseStrict;
 
 use 5.010;
 use strict;
-use overload;
-use Object::AUTHORITY;
+use overload qw();
+use match::smart qw(M)
 
 BEGIN {
 	$Acme::UseStrict::AUTHORITY = 'cpan:TOBYINK';
-	$Acme::UseStrict::VERSION   = '0.995';
+	$Acme::UseStrict::VERSION   = '1.234';
 }
 
 sub import
 {
-	my ($class, $test) = @_;
-	$test //= 'use strict';		
+	my $class = shift;
+	my ($test) = @_;
+	$test //= 'use strict';
+	
 	my %overload = (
-		'q' => sub
-			{
-				$^H |= strict::bits(qw/refs subs vars/)
-					if in_effect(1) && $_[1] ~~ $test;
-				return $_[1];
-			},
-		);
+		q => sub {
+			in_effect(1)
+				and $_[1] |M| $test
+				and $^H |= strict::bits(qw/refs subs vars/);
+			return $_[1];
+		},
+	);
 	overload::constant %overload;
 	
 	$^H{+__PACKAGE__} = 1;
@@ -34,7 +36,7 @@ sub unimport
 
 sub in_effect
 {
-	my $level    = shift // 0;
+	my $level    = $_[0] // 0;
 	my $hinthash = (caller($level))[10];
 	return $hinthash->{+__PACKAGE__};
 }
@@ -140,7 +142,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2011 by Toby Inkster.
+This software is copyright (c) 2011, 2013 by Toby Inkster.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
