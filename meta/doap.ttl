@@ -17,7 +17,7 @@
 	:repository     [ a :GitRepository ; :browse <https://github.com/tobyink/p5-acme-usestrict> ] ;
 	:created        "2011-12-06"^^xsd:date ;
 	:license        <http://dev.perl.org/licenses/> ;
-	:developer      [ a foaf:Person ; foaf:name "Toby Inkster" ; foaf:mbox <mailto:tobyink@cpan.org> ] .
+	:maintainer     [ a foaf:Person ; foaf:name "Toby Inkster" ; foaf:mbox <mailto:tobyink@cpan.org> ] .
 
 <http://dev.perl.org/licenses/>
 	dc:title        "the same terms as the perl 5 programming language system itself" .
