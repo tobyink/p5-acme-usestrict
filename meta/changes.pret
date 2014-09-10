@@ -25,3 +25,10 @@ dist:v_1-234
 		dcs:item [ rdfs:label "smartmatch -> match::smart" ];
 	].
 
+
+`Acme-UseStrict 1.235 cpan:TOBYINK`
+	issued    2014-09-10;
+	changeset [
+		item "Switch to Dist::Inkt."^^Packaging;
+	].
+

@@ -7,7 +7,7 @@ use match::smart qw(M);
 
 BEGIN {
 	$Acme::UseStrict::AUTHORITY = 'cpan:TOBYINK';
-	$Acme::UseStrict::VERSION   = '1.234';
+	$Acme::UseStrict::VERSION   = '1.235';
 }
 
 sub import
