@@ -1,0 +1,7 @@
+@prefix deps:  <http://ontologi.es/doap-deps#> .
+
+<http://purl.org/NET/cpan-uri/dist/Acme-UseStrict/project>
+	deps:runtime-requirement         [ deps:on "match::smart"^^deps:CpanId ];
+	deps:test-requirement            [ deps:on "Test::More 0.96"^^deps:CpanId ];
+	deps:test-requirement            [ deps:on "Test::Exception"^^deps:CpanId ].
+
